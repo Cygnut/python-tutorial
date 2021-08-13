@@ -42,7 +42,7 @@ class _SectionFile:
         number, self.name = leaf.split('-', 1)
         self.number = float(number)
 
-class SectionCombiner:
+class CheatsheetWriter:
     """Combines all sections into one file
     """
 
@@ -134,6 +134,6 @@ class SectionCombiner:
 if __name__ == '__main__':
     try:
         init_logging()
-        SectionCombiner().run()
+        CheatsheetWriter().run()
     except Exception as e:
         _logger.exception(e)
