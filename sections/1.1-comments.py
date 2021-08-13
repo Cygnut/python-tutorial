@@ -3,9 +3,12 @@
 
 # this is a single line comment
 
-"""Multi-line comments - there isn't any supported syntax for multi-line comments!
-The convention is to jsut embed multi-line strings, using the triple-quote syntax (e.g. right here!).
-This syntax is also the convention for docblock comments, which most editors support.
+"""Multi-line comments
+The equivalent of a multi-line comment in Python is to embed multi-line strings, using the triple-quote 
+syntax (e.g. right here!).
+
+This syntax is also used for doc-block comments, which most editors support, and has language support via
+the __doc__ attribute.
 """
 
 # %%
@@ -17,4 +20,5 @@ def talkative():
     return None
 
 print(talkative.__doc__)
+
 # %%
