@@ -4,8 +4,6 @@
 # %%
 
 def some_function(first, second, third):
-    # do something with the 3 variables
-    ###...
     pass
 
 # %%
@@ -27,8 +25,7 @@ foo(1, 2, 3, 4, 5)
 # %%
 
 """It is also possible to send functions arguments by keyword, so that the order of the argument
-does not matter, using the following syntax. The following code yields the following output: The sum
-is: 6 Result: 1
+does not matter, using the following syntax.
 """
 
 # %%

@@ -71,7 +71,7 @@ class CheatsheetWriter:
             if not os.path.isfile(filepath):
                 continue
 
-            leaf, extension = os.path.splitext(filename)
+            _, extension = os.path.splitext(filename)
 
             if '.py' != extension:
                 continue
@@ -95,6 +95,7 @@ class CheatsheetWriter:
         mapped_sections = []
         for section in sections:
             with open(section.filepath) as f:
+                _logger.debug(f"Reading file {section.filepath}")
                 content = spacer.join([
                     f"\"\"\" Section {section.number} - {section.name} \"\"\"",
                     f.read()
