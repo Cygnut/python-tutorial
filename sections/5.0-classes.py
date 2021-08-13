@@ -1,5 +1,6 @@
-"""Objects are an encapsulation of variables and functions into a single entity. Objects get their
-variables and functions from classes. Classes are essentially a template to create your objects.
+"""Classes & objects are an encapsulation of variables and functions into a single entity. Objects 
+get their variables and functions from classes. Classes are essentially a template to create your 
+objects.
 
 A very basic class would look something like this:
 """
@@ -14,12 +15,13 @@ class SomeClass:
 
 # %%
 
-"""We'll explain why you have to include that "self" as a parameter a little bit later.
-First, to assign the above class(template) to an object you would do the following:
+"""We'll explain why you have to include 'self' as a parameter a little bit later.
 
 There's no 'new' - which is a really good thing - you don't need to worry about if the thing
 you're using to create an object is a function or a constructor, which is a big help in things like
 dependency injection & unit testing..
+
+To instantiate a class instance:
 """
 
 # %%
@@ -32,11 +34,12 @@ print(dir(some_object))
 
 """Why self?
 There's no 'this' in Python, and the simplest way to think about this is how weird it is that 'this'
-is a variable which isn't declared anywhere, it's just magically there. Use 'self' though, as
-linters know to look for that.
+is a variable which isn't declared anywhere in other languages? It's just magically there. In
+python, it is the first argument passed in all class methods, which refers to the current instance - 
+that's it.
 
-In Python, the first parameter passed to methods is by convention named 'self', and is bound to the
-current instance.
+As for naming - 'self' is the name, by convention, for that first argument. You could use anything (
+use 'self' though, as linters know to look for and highlight that!)
 """
 
 # %%
@@ -60,10 +63,10 @@ some_class.method2('something')
 
 """Why cls?
 In 'class methods', which are methods associated with the class, rather than a specific instance,
-the class itself is always passed as the first argument. Again 'cls' is convention rather than
-enforced.
+the class itself is always passed as the first argument. Again, the name 'cls' is convention 
+rather than enforced.
 
-To create a class method, the method should be attributed with @classmethod.
+To create a class method, the method must be attributed with @classmethod.
 """
 
 # %%
@@ -98,7 +101,7 @@ some_object.variable
 # %%
 
 """Accessing Object Functions
-To access a function inside of an object you use notation similar to accessing a variable:
+To access a function inside of an object you use the same syntax to accessing a variable:
 """
 
 # %%
@@ -131,7 +134,7 @@ some_object = SomeClass('pinky')
 
 """Class vs instance data
 Any data defined outside of a function is the equivalent of class static data. There is no such
-thing as a member declaration in Python, so this is a place many people go wrong in Python.
+thing as a member declaration in Python, so this is a place many people go wrong..
 """
 
 # %%
@@ -174,6 +177,7 @@ private.
 - Data/functions on classes starting with __ (a 'dunder' or double-underscore) should *never* be
 used, and will be name-mangled at runtime (which will lead to exceptions if you have attempted to use
 it).
+
 Python puts the trust on the developers, rather than enforcing access keywords (e.g. private,
 protected)
 """
