@@ -1,6 +1,7 @@
 """sets are like dicts mashed up with lists:
 - Every item appears only once uniquely.
-- They are unordered and unindexed
+- They are unordered 
+- They are unindexed
 """
 
 # %%
@@ -12,8 +13,8 @@ print(some_set)
 
 # %%
 
-"""Because they're intrincally hashed, as with dicts - they're super-fast for find operations, much
-faster than a list, but generally slower to modify.
+"""Because they're intrinsically hashed, as with dicts - they're super-fast for find-operations (much
+faster than a list) but generally slower for insertion.
 """
 
 # %%
