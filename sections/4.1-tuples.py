@@ -1,17 +1,11 @@
-"""Tuples are fixed length collections, they are mainly used to store many items in a single
+"""Tuples are fixed-length collections, they are mainly used to store many items in a single
 variable. They are 'frozen' after construction, which means they cannot be altered.
-
-They can be unpacked as required.
 """
 
 # %%
 
 some_tuple = (1, 2, 4)
 print(some_tuple)
-a, b, c = some_tuple
-print(a)
-print(b)
-print(c)
 
 # %%
 
@@ -39,7 +33,7 @@ print(one)
 
 # %%
 
-"""A tuple of 0 items is a bit weirder - you have to use parentheses:
+"""A tuple of 0 items is a bit weirder - you *have* to use parentheses:
 """
 
 # %%
@@ -49,9 +43,9 @@ print(tuple_of_zero)
 
 # %%
 
-"""One handy thing to keep in mind is that it's the comma (,) which makes it a tuple, not the
+"""One handy thing to keep in mind is that it's the comma ',' which makes it a tuple, not the
 parentheses (though these can help for clarification). One exception to this rule is with a tuple
-with zero items
+with zero items.
 """
 
 # %%
