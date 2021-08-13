@@ -26,10 +26,10 @@ print(its_none is None)
 # %%
 
 """Numbers
-Python supports two types of numbers - integers(whole numbers) and floating point numbers(decimals).
+Python supports integers(whole numbers) and floating point numbers(decimals).
 (It also supports complex numbers, which will not be explained here).
 
-To define an integer, use the following:
+To define an integer, see the following:
 """
 # %%
 
@@ -51,7 +51,7 @@ print(some_float)
 # %%
 
 """Strings
-Strings are most commonly defined either with a single quote or a double quotes.
+Strings are most commonly defined either with a single quote or double quotes.
 .. but yes, a lot of the strings you're seeing right are here triple quotes..
 """
 
@@ -64,18 +64,7 @@ print(some_string)
 
 # %%
 
-"""The difference between the two is that using double quotes makes it easy to include apostrophes
-(whereas these would terminate the string if using single quotes)
-"""
-
-# %%
-
-some_string = "Don't worry about apostrophes"
-print(some_string)
-
-# %%
-
-"""Simple operators can be executed on numbers and strings:
+"""Simple operations on numbers and strings:
 """
 
 # %%
@@ -90,10 +79,12 @@ world = "world"
 helloworld = hello + " " + world
 print(helloworld)
 
+print(hello * 10)
+
 # %%
 
-"""Assignments can be done on more than one variable "simultaneously" on the same line like this
-This is really just tuple behaviour under the hood - there's no magic here.
+"""Assignments can be done on more than one variable "simultaneously" on the same line like this:
+(This is really just tuple behaviour under the hood - there's no magic here..)
 """
 
 # %%
