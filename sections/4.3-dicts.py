@@ -1,7 +1,8 @@
-"""A dict is a data type similar to arrays, but works with keys and values instead of indexes.
+"""A dict is a data type similar to associative arrays in PHP, or hashmaps/maps/dictionaries 
+in others. 
+
 Each value stored in a dict can be accessed using a key, which is any type of object (a string,
 a number, a list, etc.) instead of using its index to address it.
-For example, a database of phone numbers could be stored using a dict like this:
 """
 
 # %%
@@ -14,7 +15,7 @@ print(phonebook)
 
 # %%
 
-"""Alternatively, a dict can be initialized with the same values in the following notation:
+"""Alternatively, a dict can be initialised with the same values in the following notation:
 """
 
 # %%
@@ -46,7 +47,7 @@ for name, number in phonebook.items():
 # %%
 
 """Removing a value
-To remove a specified index, use either one of the following notations:
+To remove a specified index, use either one of the following methods:
 """
 
 # %%
@@ -59,23 +60,13 @@ phonebook = {
 del phonebook["John"]
 print(phonebook)
 
-# %%
-
 # or..
 
-# %%
-
-phonebook = {
-   "John": 938477566,
-   "Jack": 938377264,
-   "Jill": 947662781
-}
-phonebook.pop("John")
-print(phonebook)
+phonebook.pop("Jack")
 
 # %%
 
-"""Tuples can be used as dict-keys, which is very useful
+"""Tuples can be used as dict keys, which is very useful!
 """
 
 # %%
