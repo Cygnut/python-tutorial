@@ -123,7 +123,7 @@ class CheatsheetWriter:
 
     @time_this
     def run(self):
-        """Combine all files into one and validate it
+        """Write a validated cheatsheet
         """
         sections = self.__find_sections()
 
