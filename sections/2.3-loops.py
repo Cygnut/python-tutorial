@@ -1,5 +1,5 @@
 """The "for" loop
-For loops iterate over a given sequence. Here's an example:
+For loops iterate over a given sequence:
 """
 
 # %%
