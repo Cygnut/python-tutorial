@@ -36,12 +36,14 @@ query_mssqlserver_db("SELECT * FROM CATS")
 
 # %%
 
-# There's 2 types of duplication here:
+"""There's 2 types of duplication here:
 # A) Code in the middle of the function;
 # B) Code at the start at the end.
-# Let's fix both!
+# Let's resolve both!
+"""
 
-# A) Well, we know how to resolve this, you just use a common function - as usual!
+""" A) Well, we know how to resolve this, you just use a common function - as usual!
+"""
 
 # %%
 
@@ -76,9 +78,10 @@ query_mssqlserver_db("SELECT * FROM CATS")
 
 # %%
 
-# B) Hmmm - there's still a lot of duplication here - it'd be easy to eliminate if the code in the
-# middle of the functions were duplicated (they could just call a common function), rather than the
-# start and end. That's where decorators come in..
+""" B) Hmmm - there's still a lot of duplication here - it'd be easy to eliminate if the code 
+in the middle of the functions were duplicated (they could just call a common function), 
+rather than the start and end. That's where decorators come in..
+"""
 
 # %%
 
