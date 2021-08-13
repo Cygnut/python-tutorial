@@ -8,6 +8,8 @@ The convention is to jsut embed multi-line strings, using the triple-quote synta
 This syntax is also the convention for docblock comments, which most editors support.
 """
 
+# %%
+
 def talkative():
     """talkative loves to talk about himself
     """
@@ -15,3 +17,4 @@ def talkative():
     return None
 
 print(talkative.__doc__)
+# %%

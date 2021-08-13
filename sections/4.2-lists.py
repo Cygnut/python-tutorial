@@ -3,6 +3,8 @@ many variables as you wish. Lists can also be iterated over in a very simple man
 example of how to build a list.
 """
 
+# %%
+
 some_list = []
 some_list.append(1)
 some_list.append(2)
@@ -15,8 +17,12 @@ print(some_list[2]) # prints 3
 for x in some_list:
     print(x)
 
+# %%
+
 """Accessing an index which does not exist generates an exception (an error).
 """
+
+# %%
 
 some_list = [1,2,3]
 try:
@@ -24,8 +30,12 @@ try:
 except Exception as e:
     print(e)
 
+# %%
+
 """Lists of tuples are very useful, and can be unpacked in for-loops
 """
+
+# %%
 
 us_states = [
     ('alabama', 12, False),
@@ -35,3 +45,5 @@ us_states = [
 
 for state, votes, dem in us_states:
     print(f"{state} has around {votes} electoral college votes and they're pretty {'democratic' if dem else 'republican'}-leaning..")
+
+# %%

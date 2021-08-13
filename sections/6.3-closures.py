@@ -6,6 +6,8 @@ and in PHP (where non-local variables are specified in the use-block rather than
 javascript).
 """
 
+# %%
+
 def make_closure(owner):
     callers = []
     # This is the enclosing function
@@ -20,6 +22,8 @@ closure = make_closure("Top dog")
 closure("alice horse")
 closure("bob horse")
 closure("charlie horse")
+
+# %%
 
 """In javascript-land, the definition of `make_closure` would be the equivalent of:
 

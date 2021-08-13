@@ -3,11 +3,16 @@ variables and functions from classes. Classes are essentially a template to crea
 
 A very basic class would look something like this:
 """
+
+# %%
+
 class SomeClass:
     variable = "blah"
 
     def method(self):
         print("This is a message inside the class.")
+
+# %%
 
 """We'll explain why you have to include that "self" as a parameter a little bit later.
 First, to assign the above class(template) to an object you would do the following:
@@ -17,9 +22,13 @@ you're using to create an object is a function or a constructor, which is a big 
 dependency injection & unit testing..
 """
 
+# %%
+
 some_object = SomeClass()
 print(dir(some_object))
 #help(some_object)
+
+# %%
 
 """Why self?
 There's no 'this' in Python, and the simplest way to think about this is how weird it is that 'this'
@@ -29,6 +38,9 @@ linters know to look for that.
 In Python, the first parameter passed to methods is by convention named 'self', and is bound to the
 current instance.
 """
+
+# %%
+
 class SomeClass:
     variable = "blah"
 
@@ -44,6 +56,8 @@ some_class = SomeClass()
 some_class.method()
 some_class.method2('something')
 
+# %%
+
 """Why cls?
 In 'class methods', which are methods associated with the class, rather than a specific instance,
 the class itself is always passed as the first argument. Again 'cls' is convention rather than
@@ -51,6 +65,9 @@ enforced.
 
 To create a class method, the method should be attributed with @classmethod.
 """
+
+# %%
+
 class SomeClass:
     variable = "blah"
 
@@ -61,9 +78,13 @@ class SomeClass:
 
 print(SomeClass.class_method(1, 2, 3))
 
+# %%
+
 """Accessing Object Variables
 To access the variable inside of the newly created object 'some_object' you would do the following:
 """
+
+# %%
 
 class SomeClass:
     variable = "blah"
@@ -74,9 +95,13 @@ class SomeClass:
 some_object = SomeClass()
 some_object.variable
 
+# %%
+
 """Accessing Object Functions
 To access a function inside of an object you use notation similar to accessing a variable:
 """
+
+# %%
 
 class SomeClass:
     variable = "blah"
@@ -87,9 +112,13 @@ class SomeClass:
 some_object = SomeClass()
 some_object.method()
 
+# %%
+
 """__init__
 __init__ may be thought of as the constructor in Python:
 """
+
+# %%
 
 class SomeClass:
     def __init__(self, toe):
@@ -98,10 +127,14 @@ class SomeClass:
 
 some_object = SomeClass('pinky')
 
+# %%
+
 """Class vs instance data
 Any data defined outside of a function is the equivalent of class static data. There is no such
 thing as a member declaration in Python, so this is a place many people go wrong in Python.
 """
+
+# %%
 
 class Person:
     planet = "earth"
@@ -132,6 +165,7 @@ print_people(people)
 # This is why class-level data is normally 'hidden' away, and not changed, apart from possibly
 # for patching during unit testing.. But the 'standard' use would be for fixed data.
 
+# %%
 
 """Public vs protected vs private
 This is only enforced by convention, and name mangling:
@@ -143,6 +177,8 @@ it).
 Python puts the trust on the developers, rather than enforcing access keywords (e.g. private,
 protected)
 """
+
+# %%
 
 class SomeClass:
     def __init__(self):
@@ -178,3 +214,5 @@ except Exception as e:
 
 print(dir(some_object))
 #help(some_object)
+
+# %%

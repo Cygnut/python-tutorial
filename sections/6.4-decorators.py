@@ -4,6 +4,8 @@ the code at the start and end of a function.
 The standard example is below, where we want to time how long a set of functions take to execute:
 """
 
+# %%
+
 from datetime import datetime
 from time import sleep
 
@@ -32,12 +34,19 @@ def query_mssqlserver_db(query):
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
 
+# %%
+
 # There's 2 types of duplication here:
 # A) Code in the middle of the function;
 # B) Code at the start at the end.
 # Let's fix both!
 
 # A) Well, we know how to resolve this, you just use a common function - as usual!
+
+# %%
+
+from datetime import datetime
+from time import sleep
 
 def _query(query, time_taken):
     print(query)
@@ -65,9 +74,21 @@ def query_mssqlserver_db(query):
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
 
+# %%
+
 # B) Hmmm - there's still a lot of duplication here - it'd be easy to eliminate if the code in the
 # middle of the functions were duplicated (they could just call a common function), rather than the
 # start and end. That's where decorators come in..
+
+# %%
+
+from datetime import datetime
+from time import sleep
+
+def _query(query, time_taken):
+    print(query)
+    sleep(time_taken)
+    print("Query ended successfully")
 
 def time_me(func):
     def decorator(*args, **kwargs):
@@ -94,3 +115,5 @@ query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
 
 # Sweet!
+
+# %%

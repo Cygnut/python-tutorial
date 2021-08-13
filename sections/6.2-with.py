@@ -30,6 +30,8 @@ connection is always disposed of regardless of errors in client code, to avoid w
 the db.
 """
 
+# %%
+
 class DatabaseConnection:
 
     def connect(self):
@@ -73,3 +75,5 @@ try:
         db.query('')
 except Exception as e:
     print(e)
+
+# %%

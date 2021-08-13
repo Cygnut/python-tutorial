@@ -4,10 +4,13 @@ Python uses indentation for blocks, instead of curly braces. Both tabs and space
 but the standard indentation requires standard Python code to use four spaces. For example:
 """
 
+# %%
 x = 1
 if x == 1:
     # indented four spaces
     print("x is 1.")
+
+# %%
 
 """pass
 You should use pass when in situations where a level of indentiation is required to indicate the
@@ -18,6 +21,7 @@ empty methods or classes, e.g.:
 # Just the following won't work - and result in a SyntaxError:
 # def some_empty_function():
 
+# %%
 def some_empty_function():
     pass
 
@@ -25,3 +29,5 @@ def some_empty_function():
 # in the inherited class
 class SomeCustomException(Exception):
     pass
+
+# %%
