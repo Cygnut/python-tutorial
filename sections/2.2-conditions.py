@@ -5,30 +5,30 @@ when an expression is compared or evaluated. For example:
 # %%
 
 x = 2
-print(x == 2) # prints out True
-print(x == 3) # prints out False
-print(x < 3) # prints out True
+print(x == 2)
+print(x == 3)
+print(x < 3)
 
 # %%
 
 """Boolean operators
-The "and" and "or" boolean operators allow building complex boolean expressions, for example:
+The "and" and "or" boolean operators allow building more complex boolean expressions, for example:
 """
 
 # %%
 
 name = "John"
-age = 23
-if name == "John" and age == 23:
-    print("Your name is John, and you are also 23 years old.")
+age = 83
+if name == "John" and age == 83:
+    print("Your name is John, and you are also 83 years old.")
 
-if name == "John" or name == "Rick":
-    print("Your name is either John or Rick.")
+if name == "John" or name == "Wick":
+    print("Your name is either John or Wick.")
 
 # %%
 
 """The "in" operator
-The "in" operator could be used to check if a specified object exists within an iterable object
+The "in" operator can be used to check if a specified object exists within an iterable object
 container, such as a list:
 """
 
@@ -40,29 +40,6 @@ if name in [ "John", "Wick" ]:
 
 # %%
 
-"""Python uses indentation to define code blocks, instead of brackets. The standard Python
-indentation is 4 spaces, although tabs and any other space size will work, as long as it is
-consistent. Notice that code blocks do not need any termination.
-
-Here is an example for using Python's "if" statement using code blocks:
-"""
-
-# %%
-
-statement = False
-another_statement = True
-if statement is True:
-    # do something
-    pass
-elif another_statement is True: # else if
-    # do something else
-    pass
-else:
-    # do another thing
-    pass
-
-# %%
-
 """The 'is' operator
 Unlike the double equals operator "==", the "is" operator does not match the values of the
 variables, but the instances themselves. For example:
@@ -70,8 +47,8 @@ variables, but the instances themselves. For example:
 
 # %%
 
-x = [1,2,3]
-y = [1,2,3]
+x = [ 1, 2, 3 ]
+y = [ 1, 2, 3 ]
 print(x == y) # Prints out True
 print(x is y) # Prints out False
 
@@ -83,8 +60,8 @@ Using "not" before a boolean expression inverts it:
 
 # %%
 
-print(not False) # Prints out True
-print((not False) == (False)) # Prints out False
+print(not False)
+print((not False) == (False))
 
 # %%
 
@@ -113,7 +90,7 @@ print(bool(False))
 # %%
 
 """The ternary expression
-This is a little different to other languages, using the 'if' keyword instead of ?:
+This is a little different to other languages, using the 'if' and 'else' keywords instead of ?:
 
 The original logic behind it was to make it read more like human language.. I'm not so sure it
 achieves that.. - but the fact that it uses existing symbols (if and else) rather than introducing
