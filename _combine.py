@@ -53,6 +53,8 @@ class SectionCombiner:
 
     def __init__(self, current_dir=None):
         self._current_dir = current_dir or os.path.dirname(os.path.realpath(__file__))
+        self._sections_path = os.path.join(self._current_dir, self._SECTIONS_DIR)
+        self._combined_path = os.path.join(self._current_dir, self._COMBINED_FILENAME)
 
     @time_this
     def __find_sections(self):
@@ -61,13 +63,11 @@ class SectionCombiner:
         Returns:
             list: All detected section files
         """
-        sections_path = os.path.join(self._current_dir, self._SECTIONS_DIR)
-
-        section_files = os.listdir(sections_path)
+        section_files = os.listdir(self._sections_path)
 
         sections = []
         for filename in section_files:
-            filepath = os.path.join(sections_path, filename)
+            filepath = os.path.join(self._sections_path, filename)
             if not os.path.isfile(filepath):
                 continue
 
@@ -103,12 +103,10 @@ class SectionCombiner:
 
         combined_text = newline.join(combined)
 
-        combined_path = os.path.join(self._current_dir, self._COMBINED_FILENAME)
-        with open(combined_path, 'w') as f:
+        with open(self._combined_path, 'w') as f:
             f.write(combined_text)
 
-        _logger.info(f"Written to {combined_path}")
-        return combined_path
+        _logger.info(f"Written to {self._combined_path}")
 
     @time_this
     def __run_and_check_python_file(self, name, location):
@@ -129,9 +127,9 @@ class SectionCombiner:
         """
         sections = self.__find_sections()
 
-        combined_path = self.__write_combined_sections_file(sections)
+        self.__write_combined_sections_file(sections)
 
-        self.__run_and_check_python_file(self._COMBINED_MODULE_NAME, combined_path)
+        self.__run_and_check_python_file(self._COMBINED_MODULE_NAME, self._combined_path)
 
 if __name__ == '__main__':
     try:
