@@ -1,4 +1,4 @@
-"""Functions in python are defined using the block keyword "def", followed with the function's name
+"""Functions in python are defined using the keyword "def", followed with the function's name
 as the block's name. For example:
 """
 
@@ -115,7 +115,7 @@ print(append_to_list_buggy(3))
 
 # %%
 
-"""There's two way around this which are usually used:
+"""There's two ways around this which are usually used:
 - Not modifying mutable parameters
 - Using a sentinel to indicate a new instantiation should occur
 """
