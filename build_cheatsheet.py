@@ -48,13 +48,13 @@ class CheatsheetWriter:
 
     # Constants
     _SECTIONS_DIR = 'sections'
-    _COMBINED_MODULE_NAME = 'cheatsheet'
-    _COMBINED_FILENAME = f"{_COMBINED_MODULE_NAME}.py"
+    _CHEATSHEET_MODULE_NAME = 'cheatsheet'
+    _CHEATSHEET_FILENAME = f"{_CHEATSHEET_MODULE_NAME}.py"
 
     def __init__(self, current_dir=None):
         self._current_dir = current_dir or os.path.dirname(os.path.realpath(__file__))
         self._sections_path = os.path.join(self._current_dir, self._SECTIONS_DIR)
-        self._combined_path = os.path.join(self._current_dir, self._COMBINED_FILENAME)
+        self._combined_path = os.path.join(self._current_dir, self._CHEATSHEET_FILENAME)
 
     @time_this
     def __find_sections(self):
@@ -85,7 +85,7 @@ class CheatsheetWriter:
         return sections
 
     @time_this
-    def __write_combined_sections_file(self, sections):
+    def __write_cheatsheet(self, sections):
         """Write a file containing all previously found sections
 
         Args:
@@ -109,7 +109,7 @@ class CheatsheetWriter:
         _logger.info(f"Written to {self._combined_path}")
 
     @time_this
-    def __run_and_check_python_file(self, name, location):
+    def __validate_cheatsheet(self, name, location):
         """Note that the following is very unsafe, don't attempt to mimic this..
 
         Args:
@@ -127,9 +127,9 @@ class CheatsheetWriter:
         """
         sections = self.__find_sections()
 
-        self.__write_combined_sections_file(sections)
+        self.__write_cheatsheet(sections)
 
-        self.__run_and_check_python_file(self._COMBINED_MODULE_NAME, self._combined_path)
+        self.__validate_cheatsheet(self._CHEATSHEET_MODULE_NAME, self._combined_path)
 
 if __name__ == '__main__':
     try:
