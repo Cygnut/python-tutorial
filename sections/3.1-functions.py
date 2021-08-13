@@ -88,7 +88,7 @@ def write_gzip_file(output_file, contents):
 
 """
 Because we used named arguments, we were able to leave out two arguments and rearrange the remaining
-2 arguments in a sensible order (the file object is more important than the “wt” access mode).
+2 arguments in a sensible order (the file object is more important than the "wt" access mode).
 
 When we use keyword arguments:
 
