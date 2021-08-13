@@ -46,7 +46,7 @@ class SectionCombiner:
     """Combines all sections into one file
     """
 
-    # Various constants..
+    # Constants
     _SECTIONS_DIR = 'sections'
     _COMBINED_MODULE_NAME = 'combined'
     _COMBINED_FILENAME = f"{_COMBINED_MODULE_NAME}.py"
