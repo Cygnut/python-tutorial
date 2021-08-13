@@ -43,7 +43,7 @@ class _SectionFile:
         self.number = float(number)
 
 class CheatsheetWriter:
-    """Combines all sections into one file
+    """Combines all sections into a single cheatsheet file
     """
 
     # Constants
@@ -54,7 +54,7 @@ class CheatsheetWriter:
     def __init__(self, current_dir=None):
         self._current_dir = current_dir or os.path.dirname(os.path.realpath(__file__))
         self._sections_path = os.path.join(self._current_dir, self._SECTIONS_DIR)
-        self._combined_path = os.path.join(self._current_dir, self._CHEATSHEET_FILENAME)
+        self._cheatsheet_path = os.path.join(self._current_dir, self._CHEATSHEET_FILENAME)
 
     @time_this
     def __find_sections(self):
@@ -91,22 +91,22 @@ class CheatsheetWriter:
         Args:
             sections (list): The filepaths of all detected sections
         """
-        newline = os.linesep * 2
-        combined = []
+        spacer = os.linesep * 2
+        mapped_sections = []
         for section in sections:
             with open(section.filepath) as f:
-                content = newline.join([
+                content = spacer.join([
                     f"\"\"\" Section {section.number} - {section.name} \"\"\"",
                     f.read()
                 ])
-                combined.append(content)
+                mapped_sections.append(content)
 
-        combined_text = newline.join(combined)
+        cheatsheet_text = spacer.join(mapped_sections)
 
-        with open(self._combined_path, 'w') as f:
-            f.write(combined_text)
+        with open(self._cheatsheet_path, 'w') as f:
+            f.write(cheatsheet_text)
 
-        _logger.info(f"Written to {self._combined_path}")
+        _logger.info(f"Written to {self._cheatsheet_path}")
 
     @time_this
     def __validate_cheatsheet(self, name, location):
@@ -129,7 +129,7 @@ class CheatsheetWriter:
 
         self.__write_cheatsheet(sections)
 
-        self.__validate_cheatsheet(self._CHEATSHEET_MODULE_NAME, self._combined_path)
+        self.__validate_cheatsheet(self._CHEATSHEET_MODULE_NAME, self._cheatsheet_path)
 
 if __name__ == '__main__':
     try:
