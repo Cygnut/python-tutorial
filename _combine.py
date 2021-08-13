@@ -123,6 +123,7 @@ class SectionCombiner:
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
 
+    @time_this
     def run(self):
         """Combine all files into one and validate it
         """
