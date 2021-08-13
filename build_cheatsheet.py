@@ -48,7 +48,7 @@ class SectionCombiner:
 
     # Constants
     _SECTIONS_DIR = 'sections'
-    _COMBINED_MODULE_NAME = 'combined'
+    _COMBINED_MODULE_NAME = 'cheatsheet'
     _COMBINED_FILENAME = f"{_COMBINED_MODULE_NAME}.py"
 
     def __init__(self, current_dir=None):
