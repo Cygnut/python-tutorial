@@ -2,7 +2,7 @@
 A tutorial on Python
 
 
-To combine all sections into a single cheatsheet, run the following:
+To combine all sections into a single cheatsheet.py, run the following:
 ```sh
-python _combine.py
+python build_cheatsheet.py
 ```
