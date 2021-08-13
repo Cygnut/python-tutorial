@@ -1,9 +1,8 @@
 """A closure is a function object that remembers values in enclosing scopes even if they are not
-present in memory.
+present in the immediate scope.
 
-Closures are not 'new' to python - they're just supported by it, they are everywhere in javascript
-and in PHP (where non-local variables are specified in the use-block rather than implicit in
-javascript).
+Closures are not 'new' to programming - we're just going to show what they look like in by python
+in order to build towards decorators. 
 """
 
 # %%
