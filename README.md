@@ -1,7 +1,7 @@
 # Python Tutorial
 This is a tutorial aimed at beginners - albeit with a working knowledge of other programming languages.
 
-The tutorial is example heavy - if you perform a local checkout, every example provided (surrounded by # %%) can be run in most editors as an isolated cell.
+The tutorial is example heavy - if you perform a local checkout, every example provided (surrounded by `# %%`) can be run in most editors as an isolated cell.
 
 This tutorial is targeted at Python >= 3.5.
 
