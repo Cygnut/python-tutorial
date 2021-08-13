@@ -1,6 +1,6 @@
-"""Lists are very similar to arrays. They can contain any type of variable, and they can contain as
-many variables as you wish. Lists can also be iterated over in a very simple manner. Here is an
-example of how to build a list.
+"""Lists are very similar to arrays in other languages. They can contain any type of variable, 
+and they can contain as many variables as you wish. Lists can also be iterated over in a very 
+simple manner. Here is an example of how to build a list.
 """
 
 # %%
@@ -9,22 +9,21 @@ some_list = []
 some_list.append(1)
 some_list.append(2)
 some_list.append(3)
-print(some_list[0]) # prints 1
-print(some_list[1]) # prints 2
-print(some_list[2]) # prints 3
+print(some_list[0])
+print(some_list[1])
+print(some_list[2])
 
-# prints out 1,2,3
 for x in some_list:
     print(x)
 
 # %%
 
-"""Accessing an index which does not exist generates an exception (an error).
+"""Accessing an index which does not exist generates an KeyError (an exception).
 """
 
 # %%
 
-some_list = [1,2,3]
+some_list = [ 1, 2, 3 ]
 try:
     print(some_list[10])
 except Exception as e:
