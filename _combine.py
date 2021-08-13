@@ -71,7 +71,7 @@ class SectionCombiner:
             if not os.path.isfile(filepath):
                 continue
 
-            (leaf, extension) = os.path.splitext(filename)
+            leaf, extension = os.path.splitext(filename)
 
             if '.py' != extension:
                 continue
@@ -91,7 +91,7 @@ class SectionCombiner:
         Args:
             sections (list): The filepaths of all detected sections
         """
-        newline = (os.linesep * 2)
+        newline = os.linesep * 2
         combined = []
         for section in sections:
             with open(section.filepath) as f:
