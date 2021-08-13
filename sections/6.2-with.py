@@ -14,7 +14,7 @@ then the file handle on 'some_important_file.txt' will never be released - a han
 The safe way to write this function is:
 
     def safe_write_file():
-        with open('some_important_file.txt', 'a') as f
+        with open('some_important_file.txt', 'a') as f:
             f.write('some text')
             data = query_db_for_more_data()
             f.write_data(data)
