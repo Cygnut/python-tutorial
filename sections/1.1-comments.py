@@ -9,6 +9,8 @@ syntax (e.g. right here!).
 
 This syntax is also used for doc-block comments, which most editors support, and has language support via
 the __doc__ attribute.
+
+Try hovering over the function below with your mouse!
 """
 
 # %%
