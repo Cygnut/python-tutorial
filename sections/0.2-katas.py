@@ -32,3 +32,19 @@ def fizzbuzz():
 fizzbuzz()
       
 # %%
+
+"""Pythagoras:
+Given a pair of points in a 2D space, compute the distance between them.
+As an example, (0, 0) to (3, 4) should return 5.
+"""
+
+# %%
+
+def pythagoras(p1, p2):
+    xdiff = p1[0] - p2[0]
+    ydiff = p1[1] - p2[1]
+    return (xdiff ** 2 + ydiff ** 2) ** 0.5
+
+print(pythagoras((0, 0), (3, 4)))
+
+# %%
