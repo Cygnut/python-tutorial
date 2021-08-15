@@ -1,5 +1,5 @@
 # Python Tutorial
-This is a tutorial aimed at a beginner-to-intermediate level, and it helps to have existing knowledge of other programming languages.
+This is a tutorial aimed at intermediate-level programmers, and it'll help to have existing knowledge of other programming languages.
 
 The tutorial is example heavy - if you perform a local checkout/download, every example provided (surrounded by `# %%`) can be run and debugged in most editors within an isolated cell.
 
