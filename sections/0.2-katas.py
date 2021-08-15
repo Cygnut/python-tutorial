@@ -25,7 +25,7 @@ def fizzbuzz():
         s = ''
         if i % 3 == 0:
             s += 'Fizz'
-        elif i % 5 == 0:
+        if i % 5 == 0:
             s += 'Buzz'
         print(s if s else i)
 
