@@ -1,5 +1,5 @@
-"""Classes & objects are an encapsulation of variables and functions into a single entity. Objects 
-get their variables and functions from classes. Classes are essentially a template to create your 
+"""Classes & objects are an encapsulation of variables and functions into a single entity. Objects
+get their variables and functions from classes. Classes are essentially a template to create your
 objects.
 
 A very basic class would look something like this:
@@ -7,11 +7,9 @@ A very basic class would look something like this:
 
 # %%
 
-class SomeClass:
-    variable = "blah"
-
+class Car:
     def method(self):
-        print("This is a message inside the class.")
+        print("Vroom vroooooooommmmmm...")
 
 # %%
 
@@ -26,16 +24,16 @@ To instantiate a class instance:
 
 # %%
 
-some_object = SomeClass()
-print(dir(some_object))
-#help(some_object)
+car = Car()
+print(dir(car))
+#help(car)
 
 # %%
 
 """Why self?
 There's no 'this' in Python, and the simplest way to think about this is how weird it is that 'this'
 is a variable which isn't declared anywhere in other languages? It's just magically there. In
-python, it is the first argument passed in all class methods, which refers to the current instance - 
+python, it is the first argument passed in all class methods, which refers to the current instance -
 that's it.
 
 As for naming - 'self' is the name, by convention, for that first argument. You could use anything (
@@ -44,26 +42,24 @@ use 'self' though, as linters know to look for and highlight that!)
 
 # %%
 
-class SomeClass:
-    variable = "blah"
-
+class Dog:
     def method(self):
-        print("This is a message inside the class.")
+        print("Woof")
 
-    def method2(me, another_var):
-        print("You can do this, but don't - it's just to show there's nothing 'magic' about the word self")
+    def weird_method(me, another_var):
+        print("Growl - you can do this, but don't - it's just to show there's nothing 'magic' about the word self")
         print(another_var)
         me.method()
 
-some_class = SomeClass()
-some_class.method()
-some_class.method2('something')
+dog = Dog()
+dog.method()
+dog.weird_method('treat')
 
 # %%
 
 """Why cls?
 In 'class methods', which are methods associated with the class, rather than a specific instance,
-the class itself is always passed as the first argument. Again, the name 'cls' is convention 
+the class itself is always passed as the first argument. Again, the name 'cls' is convention
 rather than enforced.
 
 To create a class method, the method must be attributed with @classmethod.
@@ -71,49 +67,46 @@ To create a class method, the method must be attributed with @classmethod.
 
 # %%
 
-class SomeClass:
-    variable = "blah"
-
+class Aeroplane:
     @classmethod
     def class_method(cls, a, b, c):
         print(cls)
         return a + b + c
 
-print(SomeClass.class_method(1, 2, 3))
+print(Aeroplane.class_method(1, 2, 3))
 
 # %%
 
-"""Accessing Object Variables
-To access the variable inside of the newly created object 'some_object' you would do the following:
+"""Accessing Member Data
+To access the variable inside of the newly created object you would do the following:
+(Don't worry about __init__ for now - we'll come back to that - just know that this is how you
+create member data..)
 """
 
 # %%
 
-class SomeClass:
-    variable = "blah"
+class Food:
+    def __init__(self):
+        self.flavour = 'sweet'
 
-    def method(self):
-        print("This is a message inside the class.")
-
-some_object = SomeClass()
-some_object.variable
+food = Food()
+print(food.flavour)
 
 # %%
 
-"""Accessing Object Functions
+"""Accessing Methods
 To access a function inside of an object you use the same syntax to accessing a variable:
 """
 
 # %%
 
-class SomeClass:
-    variable = "blah"
+class Light:
+    def switch_on(self, on):
+        print(f"Switched {'on' if on else 'off'}")
 
-    def method(self):
-        print("This is a message inside the class.")
-
-some_object = SomeClass()
-some_object.method()
+light = Light()
+light.switch_on(True)
+light.switch_on(False)
 
 # %%
 
@@ -123,12 +116,12 @@ __init__ may be thought of as the constructor in Python:
 
 # %%
 
-class SomeClass:
-    def __init__(self, toe):
-        self.toe = toe
-        print(f"An instance of this class was instantiated with toes={toe}")
+class Toe:
+    def __init__(self, type):
+        self.type = type
+        print(f"An instance of this class was instantiated with toe={self.type}")
 
-some_object = SomeClass('pinky')
+toe = Toe('pinky')
 
 # %%
 
@@ -184,7 +177,7 @@ protected)
 
 # %%
 
-class SomeClass:
+class Example:
     def __init__(self):
         self.public = None
         self._private = None
@@ -199,24 +192,24 @@ class SomeClass:
     def __really_really_private_method(self):
         return None
 
-some_object = SomeClass()
-print(some_object.public)
-print(some_object.public_method())
+example = Example()
+print(example.public)
+print(example.public_method())
 
-print(some_object._private)
-print(some_object._private_method())
+print(example._private)
+print(example._private_method())
 
 try:
-    print(some_object.__really_really_private)
+    print(example.__really_really_private)
 except Exception as e:
     print(e)
 
 try:
-    print(some_object.__really_really_private_method())
+    print(example.__really_really_private_method())
 except Exception as e:
     print(e)
 
-print(dir(some_object))
-#help(some_object)
+print(dir(example))
+#help(example)
 
 # %%
