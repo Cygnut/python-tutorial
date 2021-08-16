@@ -31,15 +31,30 @@ def query_mssqlserver_db(query):
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
 
+def query_sqlite_db(query):
+    start = datetime.now()
+
+    # Simulate a middling query to a mssqlserver db
+    print(query)
+    sleep(1)
+    print("Query ended successfully")
+
+    end = datetime.now()
+    print(f"query_mssqlserver_db took {end - start}")
+
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
+query_sqlite_db("SELECT * FROM CHICKENS")
 
 # %%
 
 """There's 2 types of duplication here:
 # A) Code in the middle of the function;
 # B) Code at the start at the end.
-# Let's resolve both!
+
+There's also a bug - can you spot it?
+
+# Let's resolve all of these!
 """
 
 """ A) Well, we know how to resolve this, you just use a common function - as usual!
@@ -73,14 +88,27 @@ def query_mssqlserver_db(query):
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
 
+def query_sqlite_db(query):
+    start = datetime.now()
+
+    # Simulate a middling query to a mssqlserver db
+    _query(query, 1)
+
+    end = datetime.now()
+    print(f"query_mssqlserver_db took {end - start}")
+
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
+query_sqlite_db("SELECT * FROM CHICKENS")
 
 # %%
 
-""" B) Hmmm - there's still a lot of duplication here - it'd be easy to eliminate if the code 
-in the middle of the functions were duplicated (they could just call a common function), 
+""" B) Hmmm - there's still a lot of duplication here - it'd be easy to eliminate if the code
+in the middle of the functions were duplicated (they could just call a common function),
 rather than the start and end. That's where decorators come in..
+
+That's great - because it'll also fix the bug seen above (look at the print() containing the time
+taken..)
 """
 
 # %%
@@ -114,8 +142,13 @@ def query_postgres_db(query):
 def query_mssqlserver_db(query):
     _query(query, 2)
 
+@time_me
+def query_sqlite_db(query):
+    _query(query, 1)
+
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
+query_sqlite_db("SELECT * FROM CHICKENS")
 
 # Sweet!
 
