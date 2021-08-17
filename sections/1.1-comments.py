@@ -15,11 +15,12 @@ Try hovering over the function below with your mouse!
 
 # %%
 
+
 def talkative():
-    """talkative loves to talk about himself
-    """
-    print('I am talkative')
+    """talkative loves to talk about himself"""
+    print("I am talkative")
     return None
+
 
 print(talkative.__doc__)
 

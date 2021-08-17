@@ -20,11 +20,7 @@ print(phonebook)
 
 # %%
 
-phonebook = {
-    "John": 938477566,
-    "Jack": 938377264,
-    "Jill": 947662781
-}
+phonebook = {"John": 938477566, "Jack": 938377264, "Jill": 947662781}
 print(phonebook)
 
 # %%
@@ -36,11 +32,7 @@ keep the order of the values stored in it. To iterate over key value pairs, use 
 
 # %%
 
-phonebook = {
-    "John": 938477566,
-    "Jack" : 938377264,
-    "Jill" : 947662781
-}
+phonebook = {"John": 938477566, "Jack": 938377264, "Jill": 947662781}
 for name, number in phonebook.items():
     print(f"Phone number of {name} is {number}")
 
@@ -52,11 +44,7 @@ To remove a specified index, use either one of the following methods:
 
 # %%
 
-phonebook = {
-   "John": 938477566,
-   "Jack": 938377264,
-   "Jill": 947662781
-}
+phonebook = {"John": 938477566, "Jack": 938377264, "Jill": 947662781}
 del phonebook["John"]
 print(phonebook)
 
@@ -74,7 +62,7 @@ phonebook.pop("Jack")
 locations_by_lat_lng = {
     (13.12341422, 59.45235234): "Guildford",
     (95.94535242, 55.09235782): "Vancouver",
-    (65.12341452, 33.04985283): "New Zealand"
+    (65.12341452, 33.04985283): "New Zealand",
 }
 print(locations_by_lat_lng)
 

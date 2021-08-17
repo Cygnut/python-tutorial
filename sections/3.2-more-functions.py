@@ -3,8 +3,10 @@
 
 # %%
 
+
 def some_function(first, second, third):
     pass
+
 
 # %%
 
@@ -14,11 +16,13 @@ following syntax:
 
 # %%
 
+
 def foo(first, second, third, *args):
     print(f"First: {first}")
     print(f"Second: {second}")
     print(f"Third: {third}")
     print(f"And all the rest... {list(args)}")
+
 
 foo(1, 2, 3, 4, 5)
 
@@ -30,6 +34,7 @@ does not matter, using the following syntax.
 
 # %%
 
+
 def bar(first, second, third, **kwargs):
     if kwargs.get("action") == "sum":
         print(f"The sum is: {first + second + third}")
@@ -37,6 +42,7 @@ def bar(first, second, third, **kwargs):
     if kwargs.get("number") == "first":
         print(first)
 
-bar(1, 2, 3, action = "sum", number = "first")
+
+bar(1, 2, 3, action="sum", number="first")
 
 # %%

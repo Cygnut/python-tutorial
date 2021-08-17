@@ -6,7 +6,7 @@ pre-requisites will let you run/debug that cell in isolation.
 
 # %%
 
-print('hi there!')
+print("hi there!")
 
 # %%
 

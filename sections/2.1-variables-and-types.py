@@ -57,7 +57,7 @@ Strings are most commonly defined either with a single quote or double quotes.
 
 # %%
 
-some_string = 'hello'
+some_string = "hello"
 print(some_string)
 some_string = "hello"
 print(some_string)
@@ -90,7 +90,7 @@ print(hello * 10)
 # %%
 
 a, b = 3, 4
-print(a,b)
+print(a, b)
 
 # %%
 

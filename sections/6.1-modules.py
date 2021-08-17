@@ -33,11 +33,15 @@ import json
 
 print(math.floor(5.5))
 
-print(json.loads("""
+print(
+    json.loads(
+        """
 { 
     "property": 89, 
     "items": [ 1, 2, 3] 
-}"""))
+}"""
+    )
+)
 
 
 # %%

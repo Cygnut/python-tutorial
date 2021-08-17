@@ -35,7 +35,7 @@ container, such as a list:
 # %%
 
 name = "John"
-if name in [ "John", "Wick" ]:
+if name in ["John", "Wick"]:
     print("Your name is either John or Wick.")
 
 # %%
@@ -47,10 +47,10 @@ variables, but the instances themselves. For example:
 
 # %%
 
-x = [ 1, 2, 3 ]
-y = [ 1, 2, 3 ]
-print(x == y) # Prints out True
-print(x is y) # Prints out False
+x = [1, 2, 3]
+y = [1, 2, 3]
+print(x == y)
+print(x is y)
 
 # %%
 
@@ -102,6 +102,6 @@ new ones for one specific purpose (? and :) is a better reason for it being like
 # In most languages you'd have
 # true ? 'true' : 'false'
 # But in python, we have:
-print('true' if True else 'false')
+print("true" if True else "false")
 
 # %%

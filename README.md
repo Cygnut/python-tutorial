@@ -1,3 +1,5 @@
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 # Python Tutorial
 This is a tutorial aimed at intermediate-level programmers, and it helps to have existing knowledge of other programming languages.
 
@@ -10,7 +12,7 @@ This tutorial is targeted at Python >= 3.5.
 ## How can I thank you for writing and sharing this tutorial?
 You can star this tutorial. Starring is free for you, but it tells me and other people that this tutorial is useful!
 
-## I like this! But can I access it as a single cheatsheet? 
+## I like this! But can I access it as a single cheatsheet?
 To combine all sections into a single cheatsheet.py, run the following:
 ```sh
 python build_cheatsheet.py

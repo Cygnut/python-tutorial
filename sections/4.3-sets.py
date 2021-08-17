@@ -21,18 +21,20 @@ faster than a list) but generally slower for insertion.
 
 from timeit import timeit
 
+
 def iter_test(iterable):
     candidate = 10000
     if candidate in iterable:
         print(f"Found {candidate}")
 
-for collection in [ 'set', 'list' ]:
-    number=100000
+
+for collection in ["set", "list"]:
+    number = 100000
     print(f"When using a {collection}, {number} iterations..")
     timeit(
         "iter_test(iterable)",
         setup=f"from {__name__} import iter_test; iterable = {collection}(range(10000))",
-        number=number
+        number=number,
     )
 
 # %%

@@ -28,7 +28,7 @@ print(c)
 
 tuple_of_one = (1,)
 print(tuple_of_one)
-one, = tuple_of_one
+(one,) = tuple_of_one
 print(one)
 
 # %%
@@ -54,7 +54,7 @@ no_parens = 1, 2, 3
 with_parens = (1, 2, 3)
 print(with_parens == no_parens)
 
-no_parens = 1,
+no_parens = (1,)
 with_parens = (1,)
 print(with_parens == no_parens)
 

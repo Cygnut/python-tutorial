@@ -3,7 +3,7 @@ interpolation - manifesting in Python as f-strings"""
 
 # %%
 
-name = 'bob'
+name = "bob"
 age = 79
 
 # Spot the difference between these two lines..

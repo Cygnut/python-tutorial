@@ -9,6 +9,7 @@ The standard example is below, where we want to time how long a set of functions
 from datetime import datetime
 from time import sleep
 
+
 def query_postgres_db(query):
     start = datetime.now()
 
@@ -19,6 +20,7 @@ def query_postgres_db(query):
 
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
+
 
 def query_mssqlserver_db(query):
     start = datetime.now()
@@ -31,6 +33,7 @@ def query_mssqlserver_db(query):
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
 
+
 def query_sqlite_db(query):
     start = datetime.now()
 
@@ -41,6 +44,7 @@ def query_sqlite_db(query):
 
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
+
 
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
@@ -65,10 +69,12 @@ There's also a bug - can you spot it?
 from datetime import datetime
 from time import sleep
 
+
 def _query(query, time_taken):
     print(query)
     sleep(time_taken)
     print("Query ended successfully")
+
 
 def query_postgres_db(query):
     start = datetime.now()
@@ -79,6 +85,7 @@ def query_postgres_db(query):
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
 
+
 def query_mssqlserver_db(query):
     start = datetime.now()
 
@@ -88,6 +95,7 @@ def query_mssqlserver_db(query):
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
 
+
 def query_sqlite_db(query):
     start = datetime.now()
 
@@ -96,6 +104,7 @@ def query_sqlite_db(query):
 
     end = datetime.now()
     print(f"query_mssqlserver_db took {end - start}")
+
 
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
@@ -116,10 +125,12 @@ taken..)
 from datetime import datetime
 from time import sleep
 
+
 def _query(query, time_taken):
     print(query)
     sleep(time_taken)
     print("Query ended successfully")
+
 
 def time_me(func):
     def decorator(*args, **kwargs):
@@ -130,26 +141,32 @@ def time_me(func):
         print(f"{func.__qualname__} took {datetime.now() - start}")
         # Ditto with the result of the function, we need to forward that too!
         return result
+
     return decorator
 
+
 # Here's the same code as above, but using decorators:
+
 
 @time_me
 def query_postgres_db(query):
     _query(query, 0.5)
 
+
 @time_me
 def query_mssqlserver_db(query):
     _query(query, 2)
+
 
 @time_me
 def query_sqlite_db(query):
     _query(query, 1)
 
+
 query_postgres_db("SELECT * FROM DOGS")
 query_mssqlserver_db("SELECT * FROM CATS")
 query_sqlite_db("SELECT * FROM CHICKENS")
 
-# Sweet!
+# Sweet!
 
 # %%

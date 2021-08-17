@@ -32,8 +32,8 @@ the db.
 
 # %%
 
-class DatabaseConnection:
 
+class DatabaseConnection:
     def connect(self):
         print("Connecting to the database")
         # Database connection code...
@@ -45,7 +45,9 @@ class DatabaseConnection:
     def query(self, q):
         print("Running query")
         if not q:
-            raise RuntimeError("Raising an exception because an empty query is considered an error")
+            raise RuntimeError(
+                "Raising an exception because an empty query is considered an error"
+            )
 
     def __enter__(self):
         self.connect()
@@ -54,6 +56,7 @@ class DatabaseConnection:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.disconnect()
 
+
 # Unsafe:
 
 try:
@@ -61,7 +64,7 @@ try:
     db.connect()
     # Oops! This will throw, and we'll never disconnect - you can tell by looking for the printed
     # line saying 'Disconnecting from the database' - it won't be there!
-    db.query('')
+    db.query("")
     db.disconnect()
 
 except Exception as e:
@@ -72,7 +75,7 @@ except Exception as e:
 try:
     # Now you'll see the connect and disconnect
     with DatabaseConnection() as db:
-        db.query('')
+        db.query("")
 except Exception as e:
     print(e)
 

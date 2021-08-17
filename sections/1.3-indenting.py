@@ -23,12 +23,15 @@ empty methods or classes, e.g.:
 
 # %%
 
+
 def some_empty_function():
     pass
+
 
 # This happens all the time - wanting to specify a custom exception type, but not needing anything
 # in the inherited class
 class SomeCustomException(Exception):
     pass
+
 
 # %%

@@ -23,7 +23,7 @@ for x in some_list:
 
 # %%
 
-some_list = [ 1, 2, 3 ]
+some_list = [1, 2, 3]
 try:
     print(some_list[10])
 except Exception as e:
@@ -36,13 +36,11 @@ except Exception as e:
 
 # %%
 
-us_states = [
-    ('alabama', 12, False),
-    ('california', 50, True),
-    ('texas', 70, False)
-]
+us_states = [("alabama", 12, False), ("california", 50, True), ("texas", 70, False)]
 
 for state, votes, dem in us_states:
-    print(f"{state} has around {votes} electoral college votes and they're pretty {'democratic' if dem else 'republican'}-leaning..")
+    print(
+        f"{state} has around {votes} electoral college votes and they're pretty {'democratic' if dem else 'republican'}-leaning.."
+    )
 
 # %%

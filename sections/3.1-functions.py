@@ -4,8 +4,10 @@ as the block's name. For example:
 
 # %%
 
+
 def some_function():
     print("Hello from some_function!")
+
 
 some_function()
 
@@ -17,10 +19,12 @@ example:
 
 # %%
 
+
 def some_function_with_args(username, greeting):
     print(f"Hello, {username} , from some_function!, I wish you {greeting}")
 
-some_function_with_args('tomdog', 'a good day')
+
+some_function_with_args("tomdog", "a good day")
 
 # %%
 
@@ -29,8 +33,10 @@ some_function_with_args('tomdog', 'a good day')
 
 # %%
 
+
 def sum_two_numbers(a, b):
     return a + b
+
 
 print(sum_two_numbers(1, 2))
 
@@ -47,9 +53,11 @@ Take this code:
 
 # %%
 
+
 def write_gzip_file(output_file, contents):
-    with GzipFile(None, 'wt', 9, output_file) as gzip_out:
+    with GzipFile(None, "wt", 9, output_file) as gzip_out:
         gzip_out.write(contents)
+
 
 # %%
 
@@ -60,9 +68,11 @@ This code does the same thing but it uses keyword arguments instead of positiona
 
 # %%
 
+
 def write_gzip_file(output_file, contents):
-    with GzipFile(fileobj=output_file, mode='wt', compresslevel=9) as gzip_out:
+    with GzipFile(fileobj=output_file, mode="wt", compresslevel=9) as gzip_out:
         gzip_out.write(contents)
+
 
 # %%
 
@@ -80,9 +90,11 @@ Here’s the same code again, but the compress level has been left at its defaul
 
 # %%
 
+
 def write_gzip_file(output_file, contents):
-    with GzipFile(fileobj=output_file, mode='wt') as gzip_out:
+    with GzipFile(fileobj=output_file, mode="wt") as gzip_out:
         gzip_out.write(contents)
+
 
 # %%
 
@@ -104,9 +116,11 @@ during function calls:
 
 # %%
 
+
 def append_to_list_buggy(a, initial_list=[]):
     initial_list.append(a)
     return initial_list
+
 
 # We expect all of the following to return a list containing a single item.. but they won't..
 print(append_to_list_buggy(1))
@@ -122,10 +136,12 @@ print(append_to_list_buggy(3))
 
 # %%
 
+
 def append_to_list_fixed(a, initial_list=None):
     initial_list = initial_list or []
     initial_list.append(a)
     return initial_list
+
 
 print(append_to_list_fixed(1))
 print(append_to_list_fixed(2))

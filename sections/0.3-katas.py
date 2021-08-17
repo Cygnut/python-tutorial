@@ -1,4 +1,3 @@
-
 """Some common katas in Python:
 """
 
@@ -7,7 +6,7 @@
 
 # %%
 
-print('Hello World!')
+print("Hello World!")
 
 # %%
 
@@ -20,17 +19,19 @@ Write a program that prints the numbers 1-100, each on a new line.
 
 # %%
 
+
 def fizzbuzz():
     for i in range(1, 101):
-        s = ''
+        s = ""
         if i % 3 == 0:
-            s += 'Fizz'
+            s += "Fizz"
         if i % 5 == 0:
-            s += 'Buzz'
+            s += "Buzz"
         print(s if s else i)
 
+
 fizzbuzz()
-      
+
 # %%
 
 """Pythagoras:
@@ -40,10 +41,12 @@ As an example, (0, 0) to (3, 4) should return 5.
 
 # %%
 
+
 def pythagoras(p1, p2):
     xdiff = p1[0] - p2[0]
     ydiff = p1[1] - p2[1]
     return (xdiff ** 2 + ydiff ** 2) ** 0.5
+
 
 print(pythagoras((0, 0), (3, 4)))
 

@@ -7,9 +7,11 @@ A very basic class would look something like this:
 
 # %%
 
+
 class Car:
     def method(self):
         print("Vroom vroooooooommmmmm...")
+
 
 # %%
 
@@ -26,7 +28,7 @@ To instantiate a class instance:
 
 car = Car()
 print(dir(car))
-#help(car)
+# help(car)
 
 # %%
 
@@ -42,18 +44,22 @@ use 'self' though, as linters know to look for and highlight that!)
 
 # %%
 
+
 class Dog:
     def method(self):
         print("Woof")
 
     def weird_method(me, another_var):
-        print("Growl - you can do this, but don't - it's just to show there's nothing 'magic' about the word self")
+        print(
+            "Growl - you can do this, but don't - it's just to show there's nothing 'magic' about the word self"
+        )
         print(another_var)
         me.method()
 
+
 dog = Dog()
 dog.method()
-dog.weird_method('treat')
+dog.weird_method("treat")
 
 # %%
 
@@ -67,11 +73,13 @@ To create a class method, the method must be attributed with @classmethod.
 
 # %%
 
+
 class Aeroplane:
     @classmethod
     def class_method(cls, a, b, c):
         print(cls)
         return a + b + c
+
 
 print(Aeroplane.class_method(1, 2, 3))
 
@@ -85,9 +93,11 @@ create member data..)
 
 # %%
 
+
 class Food:
     def __init__(self):
-        self.flavour = 'sweet'
+        self.flavour = "sweet"
+
 
 food = Food()
 print(food.flavour)
@@ -100,9 +110,11 @@ To access a function inside of an object you use the same syntax to accessing a 
 
 # %%
 
+
 class Light:
     def switch_on(self, on):
         print(f"Switched {'on' if on else 'off'}")
+
 
 light = Light()
 light.switch_on(True)
@@ -116,12 +128,14 @@ __init__ may be thought of as the constructor in Python:
 
 # %%
 
+
 class Toe:
     def __init__(self, type):
         self.type = type
         print(f"An instance of this class was instantiated with toe={self.type}")
 
-toe = Toe('pinky')
+
+toe = Toe("pinky")
 
 # %%
 
@@ -132,6 +146,7 @@ thing as a member declaration in Python, so this is a place many people go wrong
 
 # %%
 
+
 class Person:
     planet = "earth"
 
@@ -139,22 +154,21 @@ class Person:
         self.name = name
 
 
-people = [
-    Person('alice'),
-    Person('bob')
-]
+people = [Person("alice"), Person("bob")]
+
 
 def print_people(people):
     for person in people:
         print(person.name)
         print(person.planet)
 
+
 # You'll see that name differs between instances, but planet does not..
 print_people(people)
 
 # Here's a way to check that Human.planet is 'static', i.e. scoped to the class, not the instance.
 # Change it on one - and it changes it on both!
-people[0].planet = 'mars'
+people[0].planet = "mars"
 
 print_people(people)
 
@@ -177,6 +191,7 @@ protected)
 
 # %%
 
+
 class Example:
     def __init__(self):
         self.public = None
@@ -191,6 +206,7 @@ class Example:
 
     def __really_really_private_method(self):
         return None
+
 
 example = Example()
 print(example.public)
@@ -210,6 +226,6 @@ except Exception as e:
     print(e)
 
 print(dir(example))
-#help(example)
+# help(example)
 
 # %%

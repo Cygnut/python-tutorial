@@ -7,15 +7,19 @@ in order to build towards decorators.
 
 # %%
 
+
 def make_closure(owner):
     callers = []
     # This is the enclosing function
     def the_closure(user):
         callers.append(user)
         # The nested function
-        print(f"Hi {owner}, the closure has now been called by the following users: {', '.join(callers)}")
+        print(
+            f"Hi {owner}, the closure has now been called by the following users: {', '.join(callers)}"
+        )
 
     return the_closure
+
 
 closure = make_closure("Top dog")
 closure("alice horse")
