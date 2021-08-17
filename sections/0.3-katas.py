@@ -20,7 +20,7 @@ from functools import reduce
 
 
 def factorial_recursive(n):
-    return n * factorial(n - 1) if n else 1
+    return n * factorial_recursive(n - 1) if n else 1
 
 
 def factorial_looped(n):
@@ -31,10 +31,12 @@ for fn in [factorial_looped, factorial_recursive]:
     for n in [0, 1, 10, 100]:
         print(f"Using {fn.__qualname__}({n}), n! = {fn(n)}")
 
+
 # The advantage of a loop is that the recursive implementation will fail after a point due to
 # reaching the maximum recursion depth.
 
-print(factorial_looped(5000))
+# This would work:
+# print(factorial_looped(5000))
 
 # This will crash out (comment out if you'd like to see this for yourself):
 # print(factorial_recursive(5000))
