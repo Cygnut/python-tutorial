@@ -53,9 +53,11 @@ Take this code:
 
 # %%
 
+import gzip
+
 
 def write_gzip_file(output_file, contents):
-    with GzipFile(None, "wt", 9, output_file) as gzip_out:
+    with gzip.GzipFile(None, "wt", 9, output_file) as gzip_out:
         gzip_out.write(contents)
 
 
@@ -68,9 +70,11 @@ This code does the same thing but it uses keyword arguments instead of positiona
 
 # %%
 
+import gzip
+
 
 def write_gzip_file(output_file, contents):
-    with GzipFile(fileobj=output_file, mode="wt", compresslevel=9) as gzip_out:
+    with gzip.GzipFile(fileobj=output_file, mode="wt", compresslevel=9) as gzip_out:
         gzip_out.write(contents)
 
 
@@ -90,9 +94,11 @@ Here’s the same code again, but the compress level has been left at its defaul
 
 # %%
 
+import gzip
+
 
 def write_gzip_file(output_file, contents):
-    with GzipFile(fileobj=output_file, mode="wt") as gzip_out:
+    with gzip.GzipFile(fileobj=output_file, mode="wt") as gzip_out:
         gzip_out.write(contents)
 
 
