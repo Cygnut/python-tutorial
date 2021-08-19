@@ -142,7 +142,11 @@ class CheatsheetWriter:
 
 if __name__ == "__main__":
     try:
+        raise Error('asdfas')
         init_logging()
         CheatsheetWriter().run()
     except Exception as e:
         _logger.exception(e)
+        # You should set a non-zero exit code on failure - normally this isn't *massively*
+        # important - but if we don't the github runner won't detect any failures.
+        sys.exit(1)
