@@ -142,7 +142,6 @@ class CheatsheetWriter:
 
 if __name__ == "__main__":
     try:
-        raise Error('asdfas')
         init_logging()
         CheatsheetWriter().run()
     except Exception as e:
