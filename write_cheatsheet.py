@@ -5,8 +5,6 @@ import datetime
 
 _logger = logging.getLogger(__name__)
 
-raise Error('intentionally broken')
-
 
 def init_logging(fmt=None):
     """Initialise logging for the application
