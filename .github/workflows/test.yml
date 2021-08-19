@@ -1,0 +1,20 @@
+# From https://github.community/t/how-to-setup-github-actions-to-run-my-python-script-on-schedule/18335
+# Builds the cheatsheet, which implicitly checks all samples are valid
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v2
+      - name: Python setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Build and test
+        run: |
+          python write_cheatsheet.py
