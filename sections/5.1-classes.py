@@ -229,3 +229,26 @@ print(dir(example))
 # help(example)
 
 # %%
+
+"""As with functions (from an earlier section) methods & classes are first-class citizens too - this
+is generally the case with many constructions in Python. We're just touching the surface here..
+"""
+
+# %%
+
+
+class Lazy:
+    def old_method_name(self, num):
+        return 100 * num
+
+    # Forward / allow an alternative name for an existing method
+    new_method_name = old_method_name
+
+
+print(Lazy().old_method_name(10) == Lazy().new_method_name(10))
+
+# Allow for another alternative name for the class
+Lethargic = Lazy
+print(Lethargic().old_method_name(20) == Lazy().old_method_name(20))
+
+# %%

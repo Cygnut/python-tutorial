@@ -11,7 +11,11 @@ def some_function(first, second, third):
 # %%
 
 """It is possible to declare functions which receive a variable number of arguments, using the
-following syntax:
+syntax below.
+- *args must be placed after all positional arguments, and 'catches' all otherwise unspecified
+positional arguments.
+- It then places their values in a tuple named args.
+- 'args' is the conventional name for such an argument.
 """
 
 # %%
@@ -21,7 +25,7 @@ def foo(first, second, third, *args):
     print(f"First: {first}")
     print(f"Second: {second}")
     print(f"Third: {third}")
-    print(f"And all the rest... {list(args)}")
+    print(f"And all the rest... {args}")
 
 
 foo(1, 2, 3, 4, 5)
@@ -29,7 +33,11 @@ foo(1, 2, 3, 4, 5)
 # %%
 
 """It is also possible to send functions arguments by keyword, so that the order of the argument
-does not matter, using the following syntax.
+does not matter, using the syntax below.
+- **kwargs must be placed after all keyword arguments, and 'catches' all otherwise unspecified
+keyword arguments.
+- It then places their values in a dict named kwargs.
+- 'kwargs' is the conventional name for such an argument.
 """
 
 # %%
@@ -44,6 +52,30 @@ def bar(first, second, third, **kwargs):
 
 
 bar(1, 2, 3, action="sum", number="first")
+
+# %%
+
+"""Using *args and **kwargs
+"""
+
+# %%
+
+
+def receive(apple, orange, *args, ham=1, eggs=True, **kwargs):
+    print("Today I received:")
+    print(f"apple={apple}")
+    print(f"orange={orange}")
+    print(f"args={args}")
+    print(f"ham={ham}")
+    print(f"eggs={eggs}")
+    print(f"kwargs={kwargs}")
+
+
+# The minimum number of argument required for a valid function call.
+receive(1, 2)
+
+# Using enough arguments to require *args and **kwargs to catch the excess
+receive(1, 2, 3, 4, 5, ham=2, eggs=False, cheese="hell yes", lamb="hell no")
 
 # %%
 
