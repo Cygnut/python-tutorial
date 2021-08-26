@@ -108,6 +108,51 @@ for factorial in factorials:
 
 # %%
 
+"""Prime sieves
+Write an algorithm using the Sieve of Eratosthenes that will find all prime numbers between 1 and
+10000.
+"""
+
+# %%
+
+
+def eratosthenes(n):
+    # We use a set rather than a list here as it's much faster when checking if i is in non_primes.
+    non_primes = set()
+    primes = []
+
+    # Look at every number between 2 and n.
+    for i in range(2, n + 1):
+
+        # If we haven't already pre-determined that this is a non-primes, it has to be a prime.
+        if i not in non_primes:
+
+            # Add i to the list of primes.
+            primes.append(i)
+
+            # We then know all multiples of this prime between itself (i) and n are non-primes.
+            #   However, we can improve upon this to reduce the number of add()s we need to do,
+            # to make this a lot faster. We only need to look at i * i and n, as
+            #  [ 2 * i, 3 * i, .. (i - 1) * i ] will have already been covered when we looked at
+            # 2, 3, (i - 1) etc.
+            for j in range(i * i, n + 1, i):
+                non_primes.add(j)
+
+    return primes
+
+
+print(eratosthenes(10000))
+
+from timeit import timeit
+
+print(
+    timeit(
+        f"eratosthenes(10000)",
+        setup=f"from {__name__} import eratosthenes",
+        number=100,
+    )
+)
+
 # %%
 
 """Pythagoras:
