@@ -163,6 +163,7 @@ print(
 # ..and if you have pandas installed:
 #
 # import pandas
+# pandas.Series(eratosthenes(10000)).plot.line()
 # pandas.DataFrame(eratosthenes(10000)).hist(bins=100)
 
 
