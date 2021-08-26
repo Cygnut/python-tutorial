@@ -96,7 +96,7 @@ from timeit import timeit
 
 for factorial in factorials:
     qualname = factorial.__qualname__
-    call = f"{qualname}(2000)"
+    call = f"{qualname}(1000)"
     print(f"Calling {call}")
     print(
         timeit(
