@@ -1,6 +1,6 @@
 """sets are like dicts mashed up with lists:
 - Every item appears only once uniquely.
-- They are unordered 
+- They are unordered
 - They are unindexed
 """
 
@@ -31,10 +31,12 @@ def iter_test(iterable):
 for collection in ["set", "list"]:
     number = 100000
     print(f"When using a {collection}, {number} iterations..")
-    timeit(
-        "iter_test(iterable)",
-        setup=f"from {__name__} import iter_test; iterable = {collection}(range(10000))",
-        number=number,
+    print(
+        timeit(
+            "iter_test(iterable)",
+            setup=f"from {__name__} import iter_test; iterable = {collection}(range(10000))",
+            number=number,
+        )
     )
 
 # %%
