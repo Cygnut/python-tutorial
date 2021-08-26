@@ -106,6 +106,13 @@ for factorial in factorials:
         )
     )
 
+# ..and if you have pandas installed:
+# import pandas
+# factorial_points = [ math.factorial(n) for n in range(1, 20) ]
+# pandas.Series(factorial_points).plot.line()
+# pandas.Series([ math.log10(f) for f in factorial_points ]).plot.line()
+
+
 # %%
 
 """Prime sieves
@@ -152,6 +159,12 @@ print(
         number=100,
     )
 )
+
+# ..and if you have pandas installed:
+#
+# import pandas
+# pandas.DataFrame(eratosthenes(10000)).hist(bins=100)
+
 
 # %%
 
