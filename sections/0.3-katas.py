@@ -163,9 +163,17 @@ print(
 # ..and if you have pandas installed:
 #
 # import pandas
-# pandas.Series(eratosthenes(10000)).plot.line()
+# from collections import Counter
+
+## What do the number primes grouped per bin (size 100) look like?
 # pandas.DataFrame(eratosthenes(10000)).hist(bins=100)
 
+## When looking at all the primes, how often do we see each type of leading digit?
+## And what do we expect the most frequent leading digit to be?
+# counter = Counter([n % 10 for n in eratosthenes(100000)])
+# index = [f"{k} ({v})" for k, v in counter.items()]
+
+# pandas.DataFrame({"y": counter.values()}, index=index).plot.pie(y="y", figsize=(5, 5))
 
 # %%
 
